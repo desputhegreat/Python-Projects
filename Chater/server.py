@@ -1,7 +1,7 @@
 #server
 import socket
 import threading
-import auth
+from auth import auth_server
 import json
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -13,7 +13,7 @@ print("Waiting for connections...")
 server.listen()
 clients = []
 
-json_dir = "C:/VsCode/Utils/Chater/data/users.json"
+json_dir = "data/users.json"
 
 with open(json_dir, "r") as file:
     users = json.load(file)
@@ -22,7 +22,7 @@ def accepter():
     while True:    
         client_socket, _ = server.accept()
         clients.append(client_socket)
-        auth.auth_server(client_socket, users, json_dir)
+        auth_server(client_socket, users, json_dir)
         client_thread = threading.Thread(target=reciver, args=(client_socket,)) 
         client_thread.start()
 

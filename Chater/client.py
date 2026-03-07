@@ -2,7 +2,7 @@
 import socket
 import threading
 import queue
-import auth
+from auth import auth_client
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 address = ("127.0.0.1", 5000)
@@ -16,8 +16,8 @@ def message_sender():
         if not messages.empty():
             print(messages.get())
             messages.task_done()
-        message = input(f"<{user}>")
-        message = f"<{user}>" + message
+        message = input(f"<{user}> ")
+        message = f"<{user}> " + message
         sock.send(message.encode())
 
 def message_reciever():
@@ -25,7 +25,7 @@ def message_reciever():
         msg = sock.recv(1024)
         messages.put(msg.decode())
 
-auth.auth_client(sock, user)
+auth_client(sock, user)
 
 message_sender_thread = threading.Thread(target=message_sender)
 message_reciever_thread = threading.Thread(target=message_reciever)
