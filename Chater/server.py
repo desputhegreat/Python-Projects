@@ -23,8 +23,6 @@ def accepter():
         client_socket, _ = server.accept()
         clients.append(client_socket)
         auth_server(client_socket, users, json_dir)
-        client_thread = threading.Thread(target=reciver, args=(client_socket,)) 
-        client_thread.start()
 
 def reciver(client):
     while True:

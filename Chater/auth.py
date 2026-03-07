@@ -57,4 +57,5 @@ def auth_server(client_socket, users, json_dir):
             users[user] = hashlib.sha256(password).hexdigest()
             with open(json_dir, "w") as file:
                 json.dump(users, file, indent=4)
-            break            
+        break
+        
