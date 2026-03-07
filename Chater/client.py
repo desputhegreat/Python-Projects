@@ -22,9 +22,12 @@ def message_sender():
 
 def message_reciever():
     while True:
-        msg = sock.recv(1024)
-        messages.put(msg.decode())
-
+        message = sock.recv(1024)
+        if message != b'':
+            messages.put(message.decode())
+        else:
+            print("Server Disconnected")
+            exit()
 auth_client(sock, user)
 
 message_sender_thread = threading.Thread(target=message_sender)
