@@ -20,6 +20,6 @@ ext = input("Enter extension of files to be renamed(eg: .pdf): ")
 for file in files:
     if file.endswith(ext):
         op = os.path.join(folder, file)
-        np = os.path.join(folder, f"RD Sharma Ch-{x}.pdf")
+        np = os.path.join(folder, f"SST Ch-{x}.pdf")
         os.rename(op,np)
         x += 1

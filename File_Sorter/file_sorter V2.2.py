@@ -18,7 +18,8 @@ extension_list = {
 
     'Excel' : ["xls", "xlsx", "xlsm", "xlsb", "csv", "ods"],
 
-    'Documents' : ["doc", "docx", "docm", "dotx", "dotm", "rtf", "txt", "pdf", "odt", "pages"]
+    'Documents' : ["doc", "docx", "docm", "dotx", "dotm", "rtf", "txt", "pdf", "odt", "pages"],
+    'Others' : []  
       }
 
 #creates folders
