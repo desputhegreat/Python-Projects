@@ -14,7 +14,7 @@ files = os.listdir(folder)
 extension_list = {
     'Images': ["apng", "png", "avif", "gif", "jpg", "jpeg", "jfif", "pjpeg", "pjp", "svg", "webp", "bmp", "ico", "cur", "tif", "tiff", "psd", "ai", "eps", "raw", "cr2", "nef", "orf", "sr2"],
 
-    'Videos': ["mp4", "m4v", "avi", "mov", "wmv", "flv", "webm", "mpeg", "mpg", "3gp", "3g2", "vob", "mkv", "ts", "m2v", "m4p", "rm", "rmvb", "ogv", "qt", "swf"],
+    'Video': ["mp4", "m4v", "avi", "mov", "wmv", "flv", "webm", "mpeg", "mpg", "3gp", "3g2", "vob", "mkv", "ts", "m2v", "m4p", "rm", "rmvb", "ogv", "qt", "swf"],
 
     'Audio': ["mp3", "wav", "ogg", "m4a", "flac", "aac", "wma", "alac", "aiff", "mid", "midi", "amr", "opus"],
 
@@ -24,11 +24,11 @@ extension_list = {
 
     'Presentations': ["ppt", "pptx", "pptm", "ppsx", "ppsm", "potx", "potm", "odp", "key", "pps"],
 
-    'Archives': ["zip", "rar", "7z", "tar", "gz", "bz2", "xz", "iso", "dmg", "cab", "jar", "war", "egg", "apk", "pkg", "deb", "rpm", "z", "tgz", "tbz2"],
+    'Compressed': ["zip", "rar", "7z", "tar", "gz", "bz2", "xz", "iso", "dmg", "cab", "jar", "war", "egg", "apk", "pkg", "deb", "rpm", "z", "tgz", "tbz2"],
 
     'Code': ["py", "js", "html", "htm", "css", "json", "xml", "yml", "yaml", "csv", "sql", "sh", "bash", "c", "cpp", "java", "ts", "tsx", "jsx", "rb", "php", "swift", "go", "rs", "cs", "pl", "r", "m", "v", "lua", "scala", "kt", "dart", "erl", "ex", "exs", "hs", "clj", "scala", "f", "f90"],
 
-    'Executables': ["exe", "msi", "bat", "cmd", "sh", "bash", "pl", "py", "jar", "app", "bin", "run", "deb", "rpm", "msix", "apk"],
+    'Programs': ["exe", "msi", "bat", "cmd", "sh", "bash", "pl", "py", "jar", "app", "bin", "run", "deb", "rpm", "msix", "apk"],
 
     'Fonts': ["ttf", "otf", "woff", "woff2", "eot", "fon", "pfb", "pfm", "afm"],
 
@@ -40,15 +40,15 @@ extension_list = {
 }
 
 #creates folders
-for key in extension_list:
-    try:   
-        os.mkdir(f"{folder}/{key}")
-    except FileExistsError:
-        pass        
+#for key in extension_list:
+#    try:   
+#        os.mkdir(f"{folder}/{key}")
+#    except FileExistsError:
+#        pass        
 #finds extension and name
 def extension_finder(x):
     if x.count(".") != 0:
-        name, *rest = x.split('.')
+        _, *rest = x.split('.')
         rest.reverse()
         return rest[0].lower()
     else:
@@ -59,8 +59,13 @@ def sorter(x,y):
     
     for key in extension_list:
         if y != None and y in extension_list[key]:
-            shutil.move(file_path, f"{folder}/{key}/{x}")
-            break
+            try:    
+                shutil.move(file_path, f"{folder}/{key}/{x}")
+                break
+            except FileNotFoundError:
+                os.mkdir(f"{folder}/{key}")
+                shutil.move(file_path, f"{folder}/{key}/{x}")
+                break
         else: 
             pass  
 #sorts non-compatible files
@@ -75,4 +80,4 @@ for file in files:
     sorter(file, extension)
 files = os.listdir(folder)
 sort_others()
-    
+print("Successfully sorted the files!")    
