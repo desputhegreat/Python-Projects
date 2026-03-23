@@ -1,8 +1,10 @@
-#THIS PROJECT IS ONGOING
+# THIS PROJECT IS ONGOING
 import socket
 import threading
 import queue
-#initializing
+from auth import client_auth
+
+# initializing
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 addr = ("127.0.0.1", 5000)
 try:
@@ -10,13 +12,15 @@ try:
 except ConnectionRefusedError:
     print("Can't connect to server")
     exit()
-messages = queue.Queue
+messages = queue.Queue()
 
-#function to send the messages to the server with error handling
+# function to send the messages to the server with error handling
+
+
 def message_sender():
-    try:    
+    try:
         while True:
-            if messages.empty(): 
+            if messages.empty():
                 message = input("")
             else:
                 print(messages.get())
@@ -28,18 +32,22 @@ def message_sender():
         exit()
 
 # function to receive the incoming messeges from the server with error handling
+
+
 def message_receiver():
-    try:    
+    try:
         while True:
             message = server.recv(1024).decode()
             # bug
-            if message != '': messages.put(message)
+            if message != '':
+                messages.put(message)
     except ConnectionResetError:
         print("Server Disconnected")
         exit()
 
 
-# creating and starting threads
+# creating and starting threads after authenticating
+client_auth(server)
 reciever_thread = threading.Thread(target=message_receiver)
 sender_thread = threading.Thread(target=message_sender)
 reciever_thread.start(), sender_thread.start()
