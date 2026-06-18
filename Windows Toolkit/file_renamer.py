@@ -14,12 +14,12 @@ files.sort(
 )
   
 x = input("Enter the starting point of numbering: ")
-
+name = input("Enter the name of the new file")
 extension = input("Enter extension of the files to be renamed(eg: .pdf): ")
 
 for file in files:
     if file.endswith(extension):
         op = os.path.join(folder, file)
-        np = os.path.join(folder, f"SST Ch-{x}.pdf")
+        np = os.path.join(folder, f"{name}-{x}.{extension}")
         os.rename(op,np)
         x += 1
