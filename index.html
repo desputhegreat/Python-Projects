@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="sa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सुखस्य मूलं धर्मः — Class 9 Sanskrit Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F4EE; --card:#FFFFFF; --ink:#2D2A24; --muted:#6B6457;
+  --line:#E5DFD3; --accent:#9A5B2E; --accent2:#3E6B4F; --gold:#B8893B;
+  --shadow:0 2px 14px rgba(80,60,30,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.55;padding:0 0 60px}
+.deva{font-family:'Tiro Devanagari Sanskrit',serif}
+header{background:linear-gradient(135deg,#9A5B2E,#7d4521);color:#fff;padding:30px 20px 26px;text-align:center}
+header h1{font-family:'Tiro Devanagari Sanskrit',serif;font-size:clamp(1.4rem,4vw,2.2rem);font-weight:400;margin-bottom:6px}
+header p{opacity:.9;font-size:.95rem}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+nav.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:22px auto;max-width:1000px;padding:0 16px}
+.tab-btn{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:9px 16px;font-family:'DM Sans';font-size:.9rem;cursor:pointer;color:var(--ink);transition:.18s;box-shadow:var(--shadow);white-space:nowrap}
+.tab-btn:hover{transform:translateY(-1px)}
+.tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.panel{display:none;animation:fade .3s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:var(--shadow)}
+.card h2{font-family:'Tiro Devanagari Sanskrit',serif;font-weight:400;font-size:1.35rem;margin-bottom:4px;color:var(--accent)}
+.card .sub{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#F1 EAD; background:#F2ECDF;color:var(--accent);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.3px}
+tr:hover td{background:#FBF8F1}
+.tbl-scroll{overflow-x:auto}
+.tag{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.74rem;font-weight:700;white-space:nowrap}
+.t-pu{background:#E3EDF4;color:#2c5d80}
+.t-stri{background:#F7E3EC;color:#a23c6b}
+.t-napu{background:#E8F0E3;color:#3e6b4f}
+.t-verb{background:#F4EAD9;color:#9a6b1e}
+.t-avya{background:#EDE4F4;color:#6b4a96}
+.s-tat{background:#FCE6D8;color:#9a5b2e}
+.s-karm{background:#D9EAF7;color:#2c5d80}
+.s-dvi{background:#E3F2E1;color:#3e6b4f}
+.s-dvigu{background:#F6E8F0;color:#a23c6b}
+.s-bahu{background:#F2E9D0;color:#8a6a1e}
+.s-avya{background:#E9E2F5;color:#6b4a96}
+.tip{background:#FBF3E4;border-left:4px solid var(--gold);border-radius:8px;padding:12px 14px;margin:14px 0;font-size:.9rem}
+.tip b{color:var(--accent)}
+.hl{background:#EAF3EC;border-left:4px solid var(--accent2);border-radius:8px;padding:12px 14px;margin:14px 0;font-size:.9rem}
+.deva-big{font-size:1.05rem}
+/* anuwad */
+.q{margin-bottom:8px}
+.q .qtext{font-size:1.02rem;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;background:#FBF8F1;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;cursor:pointer;font-family:'DM Sans';font-size:.95rem;transition:.15s}
+.opt:hover{border-color:var(--accent)}
+.opt.correct{background:#E3F2E1;border-color:#3e6b4f;color:#2c5536}
+.opt.wrong{background:#F9E3E3;border-color:#c0473e;color:#922}
+.opt.disabled{cursor:default;opacity:.85}
+.fb{font-size:.88rem;margin-top:6px;font-weight:500;min-height:18px}
+.fb.ok{color:#3e6b4f}.fb.no{color:#c0473e}
+.tr-q textarea{width:100%;min-height:60px;border:1px solid var(--line);border-radius:10px;padding:10px;font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;margin:8px 0;resize:vertical}
+.btn{background:var(--accent);color:#fff;border:none;border-radius:24px;padding:8px 18px;font-family:'DM Sans';font-weight:500;cursor:pointer;font-size:.88rem}
+.btn:hover{background:#7d4521}
+.model{display:none;background:#EAF3EC;border-radius:10px;padding:12px 14px;margin-top:10px;font-size:.95rem;border-left:4px solid var(--accent2)}
+.model.show{display:block}
+.scorebar{position:sticky;top:0;z-index:5;background:var(--accent2);color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;text-align:center;margin-bottom:18px;font-size:.95rem}
+/* study plan */
+.plan-total{font-size:1.4rem;color:var(--accent);font-family:'Tiro Devanagari Sanskrit',serif}
+.prio{display:flex;align-items:center;gap:12px;background:#FBF8F1;border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px}
+.prio .rank{background:var(--accent);color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
+.prio .why{color:var(--muted);font-size:.85rem}
+.barfill{height:8px;border-radius:6px;background:var(--accent);margin-top:5px}
+footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:26px;padding:0 16px}
+@media(max-width:560px){th,td{padding:7px 6px;font-size:.82rem}.card{padding:15px}}
+/* Search */
+.search-wrap{position:relative;margin-bottom:16px}
+#searchInput{width:100%;padding:13px 46px 13px 18px;border:2px solid var(--line);border-radius:30px;font-size:1rem;font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--card);outline:none;transition:border-color .2s,box-shadow .2s}
+#searchInput:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(154,91,46,.13)}
+.search-icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:1.1rem;pointer-events:none}
+.hint-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.hint-chip{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:4px 13px;font-size:.8rem;cursor:pointer;color:var(--muted);transition:.15s}
+.hint-chip:hover{border-color:var(--accent);color:var(--accent)}
+.sr-empty{color:var(--muted);text-align:center;padding:30px 0;font-size:.95rem}
+.sr-count{color:var(--muted);font-size:.83rem;margin-bottom:12px}
+.sr-item{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;align-items:start;padding:11px 0;border-bottom:1px solid var(--line)}
+.sr-item:last-child{border-bottom:none}
+.sr-badge{grid-column:1;grid-row:1/3;background:var(--accent);color:#fff;border-radius:20px;padding:3px 9px;font-size:.72rem;font-weight:700;white-space:nowrap;align-self:center}
+.sr-main{grid-column:2;grid-row:1;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.sr-sans{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.05rem;color:var(--accent)}
+.sr-hi{font-size:.92rem;color:var(--ink)}
+.sr-en{font-size:.85rem;color:var(--muted)}
+.sr-note{grid-column:2;grid-row:2;font-size:.8rem;color:var(--muted);font-style:italic}
+mark{background:#FDE68A;border-radius:3px;padding:0 1px}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="deva">सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः</h1>
+  <p>Class 9 Sanskrit — Interactive Study Guide · Financial Literacy &amp; Dharma</p>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab-btn active" data-tab="shab">📚 Shabdaarth</button>
+  <button class="tab-btn" data-tab="dhatu">🔧 Dhatu</button>
+  <button class="tab-btn" data-tab="roop">📝 Shabdroop</button>
+  <button class="tab-btn" data-tab="prat">🔗 Pratyay &amp; Upsarg</button>
+  <button class="tab-btn" data-tab="samas">🧩 Samas</button>
+  <button class="tab-btn" data-tab="anu">✍️ Anuwad</button>
+  <button class="tab-btn" data-tab="plan">⏱ Study Plan</button>
+  <button class="tab-btn" data-tab="srch">🔍 Search</button>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ SHABDAARTH ============ -->
+<section class="panel active" id="shab">
+  <div class="card">
+    <h2 class="deva">शब्दार्थः</h2>
+    <p class="sub">All exam-relevant vocabulary from the chapter — 36 words. Tap a row to read it.</p>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>Sanskrit</th><th>हिन्दी</th><th>English</th><th>Type</th><th>Note</th></tr>
+      <tr><td class="deva">मूलम्</td><td>आधार / जड़</td><td>root, basis</td><td><span class="tag t-napu">नपुं.</span></td><td>केन्द्रीय शब्द — सुख↔धर्म↔अर्थ की कड़ी</td></tr>
+      <tr><td class="deva">धर्मः</td><td>धर्म, कर्तव्य</td><td>righteousness, duty</td><td><span class="tag t-pu">पुं.</span></td><td>√धृ + मन् — जो धारण करे</td></tr>
+      <tr><td class="deva">अर्थः</td><td>धन</td><td>wealth, money</td><td><span class="tag t-pu">पुं.</span></td><td>चतुर्वर्ग का एक स्तम्भ; आजीविका का साधन</td></tr>
+      <tr><td class="deva">सूक्तिः</td><td>सुभाषित</td><td>maxim, aphorism</td><td><span class="tag t-stri">स्त्री.</span></td><td>सु + उक्ति; इकारान्त</td></tr>
+      <tr><td class="deva">अर्थोपार्जनम्</td><td>धन कमाना</td><td>earning of wealth</td><td><span class="tag t-napu">नपुं.</span></td><td>षष्ठी-तत्पुरुष: अर्थस्य उपार्जनम्</td></tr>
+      <tr><td class="deva">आजीविका</td><td>व्यवसाय</td><td>livelihood</td><td><span class="tag t-stri">स्त्री.</span></td><td>आ+√जीव्; आकारान्त</td></tr>
+      <tr><td class="deva">अविच्छिन्नः</td><td>अटूट</td><td>inseparable, unbroken</td><td><span class="tag t-pu">पुं.</span></td><td>नञ्-तत्पुरुष: न विच्छिन्नः</td></tr>
+      <tr><td class="deva">न्यायपूर्वकम्</td><td>न्यायसहित</td><td>justly</td><td><span class="tag t-avya">अव्य.</span></td><td>क्रियाविशेषण</td></tr>
+      <tr><td class="deva">समर्थः</td><td>सक्षम</td><td>capable</td><td><span class="tag t-pu">पुं.</span></td><td>सम्+अर्थ</td></tr>
+      <tr><td class="deva">दीर्घकालिकम्</td><td>लम्बे समय का</td><td>long-lasting</td><td><span class="tag t-napu">नपुं.</span></td><td>विशेषण</td></tr>
+      <tr><td class="deva">आवश्यकता</td><td>ज़रूरत</td><td>necessity</td><td><span class="tag t-stri">स्त्री.</span></td><td>आवश्यक + तल् (भाववाचक)</td></tr>
+      <tr><td class="deva">पर्याप्तधनम्</td><td>पर्याप्त धन</td><td>sufficient money</td><td><span class="tag t-napu">नपुं.</span></td><td>कर्मधारय समास</td></tr>
+      <tr><td class="deva">स्वकर्तव्यपालनम्</td><td>अपना कर्तव्य निभाना</td><td>doing one's duty</td><td><span class="tag t-napu">नपुं.</span></td><td>बहुपद समास</td></tr>
+      <tr><td class="deva">बाधितानि</td><td>बाधित / रुके</td><td>interrupted</td><td><span class="tag t-napu">नपुं.</span></td><td>√बाध् + क्त; ब.व.</td></tr>
+      <tr><td class="deva">असन्तुलितम्</td><td>असंतुलित</td><td>unbalanced</td><td><span class="tag t-napu">नपुं.</span></td><td>न+सन्तुलित</td></tr>
+      <tr><td class="deva">चतुर्वर्गः</td><td>चार वर्ग (धर्म-अर्थ-काम-मोक्ष)</td><td>four aims of life</td><td><span class="tag t-pu">पुं.</span></td><td>द्विगु-प्रवृत्ति समास</td></tr>
+      <tr><td class="deva">स्तम्भः</td><td>खम्भा</td><td>pillar</td><td><span class="tag t-pu">पुं.</span></td><td>रूपक — अर्थ चतुर्वर्ग का स्तम्भ</td></tr>
+      <tr><td class="deva">सन्मार्गेण</td><td>अच्छे रास्ते से</td><td>by the right path</td><td><span class="tag t-pu">पुं.</span></td><td>सत्+मार्ग; तृतीया ए.व.</td></tr>
+      <tr><td class="deva">अनैतिकः</td><td>अनुचित / अनैतिक</td><td>unethical</td><td><span class="tag t-pu">पुं.</span></td><td>न+ऐतिक</td></tr>
+      <tr><td class="deva">मा गृधः</td><td>लालच मत करो</td><td>do not covet</td><td><span class="tag t-verb">क्रिया</span></td><td>√गृध् लुङ्/लोट्; "मा" निषेधार्थक</td></tr>
+      <tr><td class="deva">औचित्यपूर्णः</td><td>उचित</td><td>justified, proper</td><td><span class="tag t-pu">पुं.</span></td><td>उचित + ष्यञ्</td></tr>
+      <tr><td class="deva">व्ययः</td><td>खर्च</td><td>expense</td><td><span class="tag t-pu">पुं.</span></td><td>वि+√अय्</td></tr>
+      <tr><td class="deva">अपव्ययः</td><td>फ़िज़ूलखर्ची</td><td>wasteful expense</td><td><span class="tag t-pu">पुं.</span></td><td>अप+व्यय; अनुचित व्यय</td></tr>
+      <tr><td class="deva">आडम्बरपूर्णः</td><td>दिखावे से भरा</td><td>ostentatious</td><td><span class="tag t-pu">पुं.</span></td><td>आडम्बर + पूर्ण</td></tr>
+      <tr><td class="deva">विलासव्यसनाय</td><td>भोग-व्यसन के लिए</td><td>for luxury &amp; addiction</td><td><span class="tag t-napu">नपुं.</span></td><td>द्वन्द्व; चतुर्थी ए.व.</td></tr>
+      <tr><td class="deva">सञ्चयः</td><td>बचत, संग्रह</td><td>savings, accumulation</td><td><span class="tag t-pu">पुं.</span></td><td>सम्+√चि+अच्</td></tr>
+      <tr><td class="deva">स्वावलम्बी</td><td>आत्मनिर्भर</td><td>self-reliant</td><td><span class="tag t-pu">पुं.</span></td><td>स्व+अव+लम्ब्+णिनि; इन्नन्त</td></tr>
+      <tr><td class="deva">स्वाभिमानः</td><td>आत्मसम्मान</td><td>self-respect</td><td><span class="tag t-pu">पुं.</span></td><td>स्व+अभिमान</td></tr>
+      <tr><td class="deva">सङ्कटकाले</td><td>विपत्ति के समय</td><td>in crisis</td><td><span class="tag t-pu">पुं.</span></td><td>सप्तमी ए.व.</td></tr>
+      <tr><td class="deva">जिह्वालालसा</td><td>जीभ का लालच</td><td>craving of the tongue</td><td><span class="tag t-stri">स्त्री.</span></td><td>षष्ठी-तत्पुरुष</td></tr>
+      <tr><td class="deva">त्वरिताहारः</td><td>शीघ्र आहार</td><td>fast food</td><td><span class="tag t-pu">पुं.</span></td><td>कर्मधारय: त्वरितः आहारः</td></tr>
+      <tr><td class="deva">शीतपेयम्</td><td>ठंडा पेय</td><td>cold/soft drink</td><td><span class="tag t-napu">नपुं.</span></td><td>कर्मधारय: शीतं पेयम्</td></tr>
+      <tr><td class="deva">पुटीकृतभोजनम्</td><td>डिब्बाबन्द खाना</td><td>packaged food</td><td><span class="tag t-napu">नपुं.</span></td><td>च्वि-प्रयोग: पुटी+कृत</td></tr>
+      <tr><td class="deva">चक्रवृद्ध्यंशः</td><td>चक्रवृद्धि ब्याज</td><td>compound interest</td><td><span class="tag t-pu">पुं.</span></td><td>चक्र+वृद्धि+अंश</td></tr>
+      <tr><td class="deva">निवेशः</td><td>निवेश</td><td>investment</td><td><span class="tag t-pu">पुं.</span></td><td>नि+√विश्+घञ्</td></tr>
+      <tr><td class="deva">सचेतनता</td><td>जागरूकता</td><td>consciousness, awareness</td><td><span class="tag t-stri">स्त्री.</span></td><td>स+चेतन+तल्</td></tr>
+      <tr><td class="deva">सन्तुलनम्</td><td>संतुलन</td><td>balance</td><td><span class="tag t-napu">नपुं.</span></td><td>सम्+√तुल्; धर्म-अर्थ-सुख का सन्तुलन</td></tr>
+      <tr><td class="deva">विपन्ना</td><td>संकटग्रस्त</td><td>destitute, ruined</td><td><span class="tag t-stri">स्त्री.</span></td><td>वि+√पद्+क्त</td></tr>
+      <tr><td class="deva">उत्तरदायी</td><td>ज़िम्मेदार</td><td>responsible</td><td><span class="tag t-pu">पुं.</span></td><td>उत्तर+दा+णिनि</td></tr>
+    </table>
+    </div>
+    <div class="tip"><b>स्मरण-सूत्रम्:</b> इस पाठ में आर्थिक योजनाओं के नाम बहुधा परीक्षा में आते हैं — PMJDY, SSY, PPF, SCSS, KVP, NSC, NPS, FD (नियतनिक्षेपः), RD (आवृत्तिनिक्षेपः)। इन्हें अवश्य याद रखें।</div>
+  </div>
+</section>
+
+<!-- ============ DHATU ============ -->
+<section class="panel" id="dhatu">
+  <div class="card">
+    <h2 class="deva">धातवः</h2>
+    <p class="sub">Key verbal roots in the chapter with लट् लकार (present tense) conjugation.</p>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>धातु</th><th>अर्थ</th><th>पाठे प्रयोगः</th><th>प्र.पु. एक. / द्वि. / बहु. (लट्)</th></tr>
+      <tr><td class="deva">√भू (भवति)</td><td>होना</td><td class="deva">कठिनं भवति</td><td class="deva">भवति / भवतः / भवन्ति</td></tr>
+      <tr><td class="deva">√कृ (करोति)</td><td>करना</td><td class="deva">अर्जनं करोति</td><td class="deva">करोति / कुरुतः / कुर्वन्ति</td></tr>
+      <tr><td class="deva">√लभ् (लभते)</td><td>पाना</td><td class="deva">सुखं लभते</td><td class="deva">लभते / लभेते / लभन्ते</td></tr>
+      <tr><td class="deva">√वृध् (वर्धते)</td><td>बढ़ना</td><td class="deva">धनं वर्धते</td><td class="deva">वर्धते / वर्धेते / वर्धन्ते</td></tr>
+      <tr><td class="deva">√अपेक्ष् (अपेक्षते)</td><td>अपेक्षा करना</td><td class="deva">सहायतां नापेक्षते</td><td class="deva">अपेक्षते / अपेक्षेते / अपेक्षन्ते</td></tr>
+      <tr><td class="deva">√सेव् (सेवते)</td><td>सेवन करना</td><td class="deva">व्यसनपदार्थानां सेवनम्</td><td class="deva">सेवते / सेवेते / सेवन्ते</td></tr>
+      <tr><td class="deva">√वद् (वदति)</td><td>कहना</td><td class="deva">कः अवदत्</td><td class="deva">वदति / वदतः / वदन्ति</td></tr>
+      <tr><td class="deva">√गृध् (गृध्यति)</td><td>लालच करना</td><td class="deva">मा गृधः</td><td class="deva">गृध्यति / गृध्यतः / गृध्यन्ति</td></tr>
+      <tr><td class="deva">√चिन्त् (चिन्तयति)</td><td>सोचना</td><td class="deva">चिन्तयेत् / चिन्तनम्</td><td class="deva">चिन्तयति / चिन्तयतः / चिन्तयन्ति</td></tr>
+      <tr><td class="deva">√स्था (तिष्ठति)</td><td>ठहरना/स्थापित होना</td><td class="deva">स्थापयितुं शक्नोति</td><td class="deva">तिष्ठति / तिष्ठतः / तिष्ठन्ति</td></tr>
+      <tr><td class="deva">√शक् (शक्नोति)</td><td>सकना</td><td class="deva">स्थापयितुं शक्नोति</td><td class="deva">शक्नोति / शक्नुतः / शक्नुवन्ति</td></tr>
+      <tr><td class="deva">√प्राप् (प्राप्नोति)</td><td>प्राप्त करना</td><td class="deva">धनं प्राप्स्यति</td><td class="deva">प्राप्नोति / प्राप्नुतः / प्राप्नुवन्ति</td></tr>
+    </table>
+    </div>
+    <div class="tip"><b>छिपी धातु कैसे पहचानें?</b> समस्त/कृदन्त शब्दों में धातु अक्सर छिपी रहती है। पहचान के संकेत:<br>
+    • <span class="deva">अर्थोपार्जनम्</span> → उप+<b>√अर्ज्</b> + ल्युट् (कमाना)।<br>
+    • <span class="deva">सञ्चयः</span> → सम्+<b>√चि</b> + अच् (इकट्ठा करना)।<br>
+    • <span class="deva">उद्धृत्य</span> → उद्+<b>√धृ</b> + ल्यप् (ऊपर उठाकर)।<br>
+    • <span class="deva">अवाप्तुम्</span> → अव+<b>√आप्</b> + तुमुन् (पाने के लिए)।<br>
+    संकेत: यदि शब्द में <b>-नम् / -तुम् / -त्वा / -य / -तः</b> प्रत्यय हों, तो उपसर्ग हटाकर मूल क्रिया खोजें।</div>
+  </div>
+</section>
+
+<!-- ============ SHABDROOP ============ -->
+<section class="panel" id="roop">
+  <div class="card">
+    <h2 class="deva">शब्दरूपाणि</h2>
+    <p class="sub">Three important words declined in all 8 vibhaktis × 3 vachanas (different genders &amp; endings).</p>
+
+    <h3 class="deva" style="color:var(--accent2);margin:6px 0">१. धर्म <span style="font-size:.8rem">(<span class="tag t-pu">पुल्लिङ्ग</span> · अकारान्त)</span></h3>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>विभक्ति</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr>
+      <tr><td>प्रथमा</td><td class="deva">धर्मः</td><td class="deva">धर्मौ</td><td class="deva">धर्माः</td></tr>
+      <tr><td>द्वितीया</td><td class="deva">धर्मम्</td><td class="deva">धर्मौ</td><td class="deva">धर्मान्</td></tr>
+      <tr><td>तृतीया</td><td class="deva">धर्मेण</td><td class="deva">धर्माभ्याम्</td><td class="deva">धर्मैः</td></tr>
+      <tr><td>चतुर्थी</td><td class="deva">धर्माय</td><td class="deva">धर्माभ्याम्</td><td class="deva">धर्मेभ्यः</td></tr>
+      <tr><td>पञ्चमी</td><td class="deva">धर्मात्</td><td class="deva">धर्माभ्याम्</td><td class="deva">धर्मेभ्यः</td></tr>
+      <tr><td>षष्ठी</td><td class="deva">धर्मस्य</td><td class="deva">धर्मयोः</td><td class="deva">धर्माणाम्</td></tr>
+      <tr><td>सप्तमी</td><td class="deva">धर्मे</td><td class="deva">धर्मयोः</td><td class="deva">धर्मेषु</td></tr>
+      <tr><td>सम्बोधन</td><td class="deva">हे धर्म!</td><td class="deva">हे धर्मौ!</td><td class="deva">हे धर्माः!</td></tr>
+    </table>
+    </div>
+
+    <h3 class="deva" style="color:var(--accent2);margin:16px 0 6px">२. सूक्ति <span style="font-size:.8rem">(<span class="tag t-stri">स्त्रीलिङ्ग</span> · इकारान्त)</span></h3>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>विभक्ति</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr>
+      <tr><td>प्रथमा</td><td class="deva">सूक्तिः</td><td class="deva">सूक्ती</td><td class="deva">सूक्तयः</td></tr>
+      <tr><td>द्वितीया</td><td class="deva">सूक्तिम्</td><td class="deva">सूक्ती</td><td class="deva">सूक्तीः</td></tr>
+      <tr><td>तृतीया</td><td class="deva">सूक्त्या</td><td class="deva">सूक्तिभ्याम्</td><td class="deva">सूक्तिभिः</td></tr>
+      <tr><td>चतुर्थी</td><td class="deva">सूक्त्यै / सूक्तये</td><td class="deva">सूक्तिभ्याम्</td><td class="deva">सूक्तिभ्यः</td></tr>
+      <tr><td>पञ्चमी</td><td class="deva">सूक्त्याः / सूक्तेः</td><td class="deva">सूक्तिभ्याम्</td><td class="deva">सूक्तिभ्यः</td></tr>
+      <tr><td>षष्ठी</td><td class="deva">सूक्त्याः / सूक्तेः</td><td class="deva">सूक्त्योः</td><td class="deva">सूक्तीनाम्</td></tr>
+      <tr><td>सप्तमी</td><td class="deva">सूक्त्याम् / सूक्तौ</td><td class="deva">सूक्त्योः</td><td class="deva">सूक्तिषु</td></tr>
+      <tr><td>सम्बोधन</td><td class="deva">हे सूक्ते!</td><td class="deva">हे सूक्ती!</td><td class="deva">हे सूक्तयः!</td></tr>
+    </table>
+    </div>
+
+    <h3 class="deva" style="color:var(--accent2);margin:16px 0 6px">३. धन <span style="font-size:.8rem">(<span class="tag t-napu">नपुंसकलिङ्ग</span> · अकारान्त)</span></h3>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>विभक्ति</th><th>एकवचन</th><th>द्विवचन</th><th>बहुवचन</th></tr>
+      <tr><td>प्रथमा</td><td class="deva">धनम्</td><td class="deva">धने</td><td class="deva">धनानि</td></tr>
+      <tr><td>द्वितीया</td><td class="deva">धनम्</td><td class="deva">धने</td><td class="deva">धनानि</td></tr>
+      <tr><td>तृतीया</td><td class="deva">धनेन</td><td class="deva">धनाभ्याम्</td><td class="deva">धनैः</td></tr>
+      <tr><td>चतुर्थी</td><td class="deva">धनाय</td><td class="deva">धनाभ्याम्</td><td class="deva">धनेभ्यः</td></tr>
+      <tr><td>पञ्चमी</td><td class="deva">धनात्</td><td class="deva">धनाभ्याम्</td><td class="deva">धनेभ्यः</td></tr>
+      <tr><td>षष्ठी</td><td class="deva">धनस्य</td><td class="deva">धनयोः</td><td class="deva">धनानाम्</td></tr>
+      <tr><td>सप्तमी</td><td class="deva">धने</td><td class="deva">धनयोः</td><td class="deva">धनेषु</td></tr>
+      <tr><td>सम्बोधन</td><td class="deva">हे धन!</td><td class="deva">हे धने!</td><td class="deva">हे धनानि!</td></tr>
+    </table>
+    </div>
+    <div class="tip"><b>तुलना-सूत्रम्:</b> नपुंसक (धन) में प्रथमा व द्वितीया रूप समान होते हैं तथा बहुवचन में <span class="deva">-आनि</span> लगता है — यही पुल्लिङ्ग (धर्म) से मुख्य अन्तर है।</div>
+  </div>
+</section>
+
+<!-- ============ PRATYAY & UPSARG ============ -->
+<section class="panel" id="prat">
+  <div class="card">
+    <h2 class="deva">उपसर्गाः</h2>
+    <p class="sub">Prefixes used in the chapter and how they change meaning.</p>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>उपसर्ग</th><th>अर्थ</th><th>पाठे उदाहरणम्</th><th>अर्थ पर प्रभाव</th></tr>
+      <tr><td class="deva">अप</td><td>विपरीत/बुरा</td><td class="deva">अप+व्यय = अपव्ययः</td><td>व्यय → बुरा/फ़िज़ूल खर्च</td></tr>
+      <tr><td class="deva">उप</td><td>निकट/सहायक</td><td class="deva">उप+अर्जनम् = उपार्जनम्</td><td>अर्जन → धन कमाना</td></tr>
+      <tr><td class="deva">सम्</td><td>अच्छी तरह/साथ</td><td class="deva">सम्+चयः = सञ्चयः</td><td>चय → भली-भाँति संग्रह</td></tr>
+      <tr><td class="deva">नि</td><td>नीचे/भीतर</td><td class="deva">नि+वेशः = निवेशः</td><td>प्रवेश → धन लगाना (invest)</td></tr>
+      <tr><td class="deva">वि</td><td>विशेष/अलग</td><td class="deva">वि+पन्ना = विपन्ना</td><td>पन्ना → संकटग्रस्त, नष्ट</td></tr>
+      <tr><td class="deva">अव</td><td>नीचे/से दूर</td><td class="deva">अव+आप्तुम् = अवाप्तुम्</td><td>प्राप्त करने के लिए</td></tr>
+      <tr><td class="deva">उद्</td><td>ऊपर</td><td class="deva">उद्+धृत्य = उद्धृत्य</td><td>ऊपर उठाकर</td></tr>
+      <tr><td class="deva">परि</td><td>चारों ओर/पूर्ण</td><td class="deva">परि+शीलनम् = परिशीलनम्</td><td>भली-भाँति परीक्षण</td></tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="deva">प्रत्ययाः</h2>
+    <p class="sub">Suffixes (कृत् &amp; तद्धित) found in the chapter.</p>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>प्रत्यय</th><th>प्रकार</th><th>कार्य (function)</th><th>पाठे उदाहरणम्</th></tr>
+      <tr><td class="deva">क्त</td><td><span class="tag s-tat">कृत्</span></td><td>भूतकालिक विशेषण</td><td class="deva">अर्जित (√अर्ज्+क्त), बाधित</td></tr>
+      <tr><td class="deva">ल्युट् (-अन/नम्)</td><td><span class="tag s-tat">कृत्</span></td><td>भाववाचक संज्ञा</td><td class="deva">उपार्जनम्, पालनम्, सञ्चयनम्</td></tr>
+      <tr><td class="deva">तुमुन् (-तुम्)</td><td><span class="tag s-tat">कृत्</span></td><td>"के लिए" / उद्देश्य</td><td class="deva">अवाप्तुम्, कर्तुम्, स्थापयितुम्</td></tr>
+      <tr><td class="deva">ल्यप् (-य)</td><td><span class="tag s-tat">कृत्</span></td><td>पूर्वकालिक क्रिया (उपसर्गयुक्त)</td><td class="deva">उद्धृत्य</td></tr>
+      <tr><td class="deva">णिनि (-ई)</td><td><span class="tag s-tat">कृत्</span></td><td>कर्ता/स्वभाववाचक</td><td class="deva">स्वावलम्बी, उत्तरदायी</td></tr>
+      <tr><td class="deva">तल् (-ता)</td><td><span class="tag s-dvi">तद्धित</span></td><td>भाववाचक संज्ञा बनाना</td><td class="deva">सचेतनता, आवश्यकता, साक्षरता</td></tr>
+      <tr><td class="deva">ष्यञ् (-य)</td><td><span class="tag s-dvi">तद्धित</span></td><td>भाव/गुणवाचक</td><td class="deva">औचित्यम् (उचित→), आजीविका</td></tr>
+      <tr><td class="deva">मतुप्/इन्</td><td><span class="tag s-dvi">तद्धित</span></td><td>"वाला" — सम्बन्ध दर्शाना</td><td class="deva">बुद्धिमान्, स्वाभिमानी</td></tr>
+    </table>
+    </div>
+    <div class="hl"><b>विशेष स्मरणीयम्:</b> स्वयं <span class="deva">संस्कृतम्</span> शब्द बना है — <span class="deva">सम् (उपसर्ग) + √कृ (धातु) + क्त (प्रत्यय)</span> = "भली-भाँति संस्कारित/परिष्कृत"। उपसर्ग + धातु + प्रत्यय का यही त्रिक हर कृदन्त शब्द में खोजना सीखें।</div>
+  </div>
+</section>
+
+<!-- ============ SAMAS ============ -->
+<section class="panel" id="samas">
+  <div class="card">
+    <h2 class="deva">समासाः</h2>
+    <p class="sub">Compound words from the chapter with विग्रह and समास type.</p>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>समस्त पद</th><th>विग्रह</th><th>समास</th></tr>
+      <tr><td class="deva">अर्थोपार्जनम्</td><td class="deva">अर्थस्य उपार्जनम्</td><td><span class="tag s-tat">षष्ठी-तत्पुरुष</span></td></tr>
+      <tr><td class="deva">धर्मपालनम्</td><td class="deva">धर्मस्य पालनम्</td><td><span class="tag s-tat">षष्ठी-तत्पुरुष</span></td></tr>
+      <tr><td class="deva">जिह्वालालसा</td><td class="deva">जिह्वायाः लालसा</td><td><span class="tag s-tat">षष्ठी-तत्पुरुष</span></td></tr>
+      <tr><td class="deva">न्यायपूर्वकम्</td><td class="deva">न्यायेन पूर्वकम्</td><td><span class="tag s-tat">तृतीया-तत्पुरुष</span></td></tr>
+      <tr><td class="deva">चक्रवृद्ध्यंशेन</td><td class="deva">चक्रवृद्ध्या अंशः, तेन</td><td><span class="tag s-tat">तृतीया-तत्पुरुष</span></td></tr>
+      <tr><td class="deva">कष्टार्जितधनस्य</td><td class="deva">कष्टेन अर्जितं धनम्, तस्य</td><td><span class="tag s-karm">कर्मधारय</span></td></tr>
+      <tr><td class="deva">त्वरिताहारः</td><td class="deva">त्वरितः च असौ आहारः</td><td><span class="tag s-karm">कर्मधारय</span></td></tr>
+      <tr><td class="deva">शीतपेयम्</td><td class="deva">शीतं च तत् पेयम्</td><td><span class="tag s-karm">कर्मधारय</span></td></tr>
+      <tr><td class="deva">पुटीकृतभोजनम्</td><td class="deva">पुटीकृतं च तत् भोजनम्</td><td><span class="tag s-karm">कर्मधारय</span></td></tr>
+      <tr><td class="deva">पर्याप्तधनम्</td><td class="deva">पर्याप्तं च तत् धनम्</td><td><span class="tag s-karm">कर्मधारय</span></td></tr>
+      <tr><td class="deva">आडम्बरपूर्णः</td><td class="deva">आडम्बरेण पूर्णः</td><td><span class="tag s-tat">तृतीया-तत्पुरुष</span></td></tr>
+      <tr><td class="deva">अविच्छिन्नः</td><td class="deva">न विच्छिन्नः</td><td><span class="tag s-tat">नञ्-तत्पुरुष</span></td></tr>
+      <tr><td class="deva">अनैतिकः</td><td class="deva">न ऐतिकः</td><td><span class="tag s-tat">नञ्-तत्पुरुष</span></td></tr>
+      <tr><td class="deva">विलासव्यसनम्</td><td class="deva">विलासः च व्यसनं च</td><td><span class="tag s-dvi">द्वन्द्व</span></td></tr>
+      <tr><td class="deva">धर्मार्थयोः</td><td class="deva">धर्मः च अर्थः च, तयोः</td><td><span class="tag s-dvi">द्वन्द्व</span></td></tr>
+      <tr><td class="deva">धर्मार्थकाममोक्षाः</td><td class="deva">धर्मः च अर्थः च कामः च मोक्षः च</td><td><span class="tag s-dvi">द्वन्द्व</span></td></tr>
+      <tr><td class="deva">चतुर्वर्गः</td><td class="deva">चतुर्णां वर्गाणां समाहारः</td><td><span class="tag s-dvigu">द्विगु</span></td></tr>
+      <tr><td class="deva">त्रिविधः</td><td class="deva">त्रयः विधाः यस्य सः</td><td><span class="tag s-bahu">बहुव्रीहि</span></td></tr>
+      <tr><td class="deva">दीर्घकालिकम्</td><td class="deva">दीर्घः कालः, तत्र भवम्</td><td><span class="tag s-karm">कर्मधारय</span></td></tr>
+      <tr><td class="deva">प्रदर्शनकारिपरिधानम्</td><td class="deva">प्रदर्शनकारि च तत् परिधानम्</td><td><span class="tag s-karm">कर्मधारय</span></td></tr>
+      <tr><td class="deva">यथार्थम्</td><td class="deva">अर्थम् अनतिक्रम्य</td><td><span class="tag s-avya">अव्ययीभाव</span></td></tr>
+      <tr><td class="deva">प्रतिदिनम्</td><td class="deva">दिनं दिनं प्रति</td><td><span class="tag s-avya">अव्ययीभाव</span></td></tr>
+    </table>
+    </div>
+    <div class="tip"><b>रंग-संकेत:</b> <span class="tag s-tat">तत्पुरुष</span> <span class="tag s-karm">कर्मधारय</span> <span class="tag s-dvi">द्वन्द्व</span> <span class="tag s-dvigu">द्विगु</span> <span class="tag s-bahu">बहुव्रीहि</span> <span class="tag s-avya">अव्ययीभाव</span> — पहचान के लिए विग्रह में "च...च" = द्वन्द्व, "यस्य/येषाम्" = बहुव्रीहि, संख्यावाची प्रथम पद = द्विगु।</div>
+  </div>
+</section>
+
+<!-- ============ ANUWAD ============ -->
+<section class="panel" id="anu">
+  <div class="scorebar" id="scorebar">स्कोर: 0 / 8 सही</div>
+  <div class="card">
+    <h2 class="deva">अभ्यासः — Practice</h2>
+    <p class="sub">8 questions: MCQ &amp; translation alternate. MCQs give instant feedback; translations reveal a model answer.</p>
+
+    <!-- Q1 MCQ -->
+    <div class="q" data-type="mcq" data-correct="2">
+      <div class="qtext deva">१. "सुखस्य मूलं धर्मः, धर्मस्य मूलम् अर्थः" — इयं सूक्तिः कस्मिन् ग्रन्थे अस्ति?</div>
+      <button class="opt deva">गरुडपुराणम्</button>
+      <button class="opt deva">मनुस्मृतिः</button>
+      <button class="opt deva">कौटिल्यस्य अर्थशास्त्रम्</button>
+      <button class="opt deva">चाणक्यनीतिः</button>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q2 Translation Sans->Hindi -->
+    <div class="q tr-q" data-type="tr">
+      <div class="qtext">२. इस वाक्य का हिन्दी अनुवाद कीजिए: <span class="deva">"यः न्यायपूर्वकम् अर्थोपार्जनं करोति, सः धर्मपालनं समर्थः भवति।"</span></div>
+      <textarea placeholder="यहाँ अपना उत्तर लिखें..."></textarea>
+      <button class="btn">Check ▸</button>
+      <div class="model">जो व्यक्ति न्यायपूर्वक धन कमाता है, वह धर्म का पालन करने में समर्थ होता है।</div>
+    </div>
+
+    <!-- Q3 MCQ -->
+    <div class="q" data-type="mcq" data-correct="1">
+      <div class="qtext deva">३. गरुडपुराणे किम् उपदिष्टम् अस्ति?</div>
+      <button class="opt deva">रात्रौ धनस्य चिन्तनं करणीयम्।</button>
+      <button class="opt deva">प्रभाते (ब्राह्ममुहूर्ते) धर्मार्थयोः चिन्तनं करणीयम्।</button>
+      <button class="opt deva">केवलं धर्मचिन्तनं करणीयम्।</button>
+      <button class="opt deva">केवलम् अर्थचिन्तनं करणीयम्।</button>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q4 Translation Hindi->Sans -->
+    <div class="q tr-q" data-type="tr">
+      <div class="qtext">४. संस्कृत में अनुवाद कीजिए: "अनुचित खर्च (अपव्यय) त्यागने योग्य है।"</div>
+      <textarea placeholder="संस्कृतेन लिखत..."></textarea>
+      <button class="btn">Check ▸</button>
+      <div class="model deva">अपव्ययः वर्जनीयः। (अथवा — अपव्ययः त्यक्तव्यः।)</div>
+    </div>
+
+    <!-- Q5 MCQ -->
+    <div class="q" data-type="mcq" data-correct="2">
+      <div class="qtext deva">५. "जलबिन्दुनिपातेन क्रमशः पूर्यते घटः" इति वाक्यं कः अवदत्?</div>
+      <button class="opt deva">बृहस्पतिः</button>
+      <button class="opt deva">मनुः</button>
+      <button class="opt deva">चाणक्यः</button>
+      <button class="opt deva">याज्ञवल्क्यः</button>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q6 Translation Sans->Hindi -->
+    <div class="q tr-q" data-type="tr">
+      <div class="qtext">६. हिन्दी अनुवाद कीजिए: <span class="deva">"लघु-लघुः सञ्चयोऽपि कालान्तरे महत्सम्पत्तिरूपेण वर्धते।"</span></div>
+      <textarea placeholder="यहाँ अपना उत्तर लिखें..."></textarea>
+      <button class="btn">Check ▸</button>
+      <div class="model">छोटी-छोटी बचत भी समय बीतने पर बड़ी सम्पत्ति के रूप में बढ़ जाती है।</div>
+    </div>
+
+    <!-- Q7 MCQ -->
+    <div class="q" data-type="mcq" data-correct="2">
+      <div class="qtext deva">७. छात्रैः क्रियमाणः "अपव्ययः" कः?</div>
+      <button class="opt deva">स्वास्थ्यलाभाय व्ययः</button>
+      <button class="opt deva">विद्यार्जनाय व्ययः</button>
+      <button class="opt deva">आडम्बरयुक्तः प्रदर्शनात्मकः व्ययः</button>
+      <button class="opt deva">आत्मसुरक्षायै व्ययः</button>
+      <div class="fb"></div>
+    </div>
+
+    <!-- Q8 Translation Hindi->Sans -->
+    <div class="q tr-q" data-type="tr">
+      <div class="qtext">८. संस्कृत में अनुवाद कीजिए: "धर्म, अर्थ और सुख का संतुलन ही यथार्थ जीवन का लक्षण है।"</div>
+      <textarea placeholder="संस्कृतेन लिखत..."></textarea>
+      <button class="btn">Check ▸</button>
+      <div class="model deva">धर्मः, अर्थः, सुखम् च — एतेषां सन्तुलनम् एव यथार्थजीवनस्य लक्षणम्।</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STUDY PLAN ============ -->
+<section class="panel" id="plan">
+  <div class="card">
+    <h2 class="deva">अध्ययन-योजना — Study Plan</h2>
+    <p class="sub">Suggested time per task for solid exam preparation.</p>
+    <div class="tbl-scroll">
+    <table>
+      <tr><th>Task</th><th>Minutes</th><th></th></tr>
+      <tr><td>📖 Poem / पाठ reading (with meaning &amp; श्लोक)</td><td>20</td><td><div class="barfill" style="width:80px"></div></td></tr>
+      <tr><td>📚 Shabdaarth (36 words)</td><td>30</td><td><div class="barfill" style="width:120px"></div></td></tr>
+      <tr><td>📝 Shabdroop (3 declensions)</td><td>20</td><td><div class="barfill" style="width:80px"></div></td></tr>
+      <tr><td>🔧 Dhatu (12 roots, लट्)</td><td>15</td><td><div class="barfill" style="width:60px"></div></td></tr>
+      <tr><td>🧩 Samas (22 compounds)</td><td>20</td><td><div class="barfill" style="width:80px"></div></td></tr>
+      <tr><td>🔗 Pratyay &amp; Upsarg</td><td>15</td><td><div class="barfill" style="width:60px"></div></td></tr>
+      <tr><td>✍️ Anuwad practice (8 Q)</td><td>20</td><td><div class="barfill" style="width:80px"></div></td></tr>
+      <tr><td>🗒 Textbook exercises (अभ्यासात् जायते सिद्धिः)</td><td>30</td><td><div class="barfill" style="width:120px"></div></td></tr>
+      <tr style="font-weight:700"><td>कुलम् — TOTAL</td><td colspan="2"><span class="plan-total">170 मिनट ≈ 2 घं. 50 मि.</span></td></tr>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="deva">परीक्षा-प्राथमिकता — Priority Order</h2>
+    <p class="sub">Ranked by exam importance — do the top items first.</p>
+    <div class="prio"><div class="rank">1</div><div><b>श्लोक/सूक्ति अर्थ + स्रोत-ग्रन्थ</b><div class="why">हर साल सीधे प्रश्न — कौन-सी सूक्ति किस ग्रन्थ की (अर्थशास्त्र, मनुस्मृति, चाणक्यनीति, गरुडपुराण)।</div></div></div>
+    <div class="prio"><div class="rank">2</div><div><b>Shabdaarth &amp; गद्यांश-आधारित प्रश्न</b><div class="why">वस्तुनिष्ठ + एकपद/पूर्णवाक्य उत्तर — सर्वाधिक अंक भार।</div></div></div>
+    <div class="prio"><div class="rank">3</div><div><b>Samas (विग्रह + प्रकार)</b><div class="why">व्याकरण खण्ड में निश्चित प्रश्न; द्वन्द्व व कर्मधारय यहाँ प्रचुर हैं।</div></div></div>
+    <div class="prio"><div class="rank">4</div><div><b>अनुवाद (संस्कृत↔हिन्दी)</b><div class="why">वर्णनात्मक खण्ड; अभ्यास से तेज़ी आती है।</div></div></div>
+    <div class="prio"><div class="rank">5</div><div><b>Pratyay &amp; Upsarg</b><div class="why">शब्द-निर्माण व रिक्तस्थान प्रश्न — कृत्/तद्धित पहचान।</div></div></div>
+    <div class="prio"><div class="rank">6</div><div><b>Shabdroop &amp; Dhatu रूप</b><div class="why">रिक्तस्थान-पूर्ति (लभते/लभेते आदि); नियमित जोड़े याद रखें।</div></div></div>
+    <div class="prio"><div class="rank">7</div><div><b>आर्थिक योजनाएँ (PMJDY, SSY...) व चक्रवृद्धि</b><div class="why">मूल्यपरक/परियोजना-आधारित — समझ आधारित, रट्टे की कम ज़रूरत।</div></div></div>
+  </div>
+</section>
+
+<!-- ============ SEARCH ============ -->
+<section class="panel" id="srch">
+  <div class="card">
+    <h2 style="font-family:'DM Sans';font-weight:700;font-size:1.2rem;margin-bottom:4px">🔍 Hindi Word Search</h2>
+    <p class="sub">Type Hindi words in English script — e.g. <b>dhan</b>, <b>dharma</b>, <b>bachat</b>, <b>sanchay</b>, <b>aajivika</b></p>
+    <div class="search-wrap">
+      <input id="searchInput" type="text" placeholder="e.g. dhan, dharma, vyay, nivesha…" autocomplete="off" spellcheck="false">
+      <span class="search-icon">🔍</span>
+    </div>
+    <div class="hint-row" id="hintRow">
+      <span class="hint-chip" data-q="dhan">dhan</span>
+      <span class="hint-chip" data-q="dharma">dharma</span>
+      <span class="hint-chip" data-q="bachat">bachat</span>
+      <span class="hint-chip" data-q="vyay">vyay</span>
+      <span class="hint-chip" data-q="nivesha">nivesha</span>
+      <span class="hint-chip" data-q="sanchay">sanchay</span>
+      <span class="hint-chip" data-q="sukha">sukha</span>
+      <span class="hint-chip" data-q="nyaya">nyaya</span>
+      <span class="hint-chip" data-q="aajivika">aajivika</span>
+    </div>
+    <div id="srchResults"><p class="sr-empty">Start typing to search across all sections ✨</p></div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p class="deva" style="font-size:1.05rem;margin-bottom:6px">क्षणशः कणशश्चैव विद्यामर्थं च साधयेत्।</p>
+  <p>Interactive study guide · Class 9 Sanskrit · सुखस्य मूलं धर्मः</p>
+</footer>
+
+<script>
+// ---- Tab switching ----
+const btns=document.querySelectorAll('.tab-btn');
+const panels=document.querySelectorAll('.panel');
+btns.forEach(b=>b.addEventListener('click',()=>{
+  btns.forEach(x=>x.classList.remove('active'));
+  panels.forEach(p=>p.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById(b.dataset.tab).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+
+// ---- Anuwad scoring ----
+let scored={};      // track which questions already counted
+let score=0;
+const totalQ=8;
+const bar=document.getElementById('scorebar');
+function updateBar(){bar.textContent='स्कोर: '+score+' / '+totalQ+' सही';}
+
+// MCQs
+document.querySelectorAll('.q[data-type="mcq"]').forEach((q,qi)=>{
+  const correct=parseInt(q.dataset.correct);
+  const opts=q.querySelectorAll('.opt');
+  const fb=q.querySelector('.fb');
+  opts.forEach((o,i)=>o.addEventListener('click',()=>{
+    if(q.dataset.answered)return;
+    q.dataset.answered='1';
+    opts.forEach(x=>x.classList.add('disabled'));
+    if(i===correct){
+      o.classList.add('correct');
+      fb.textContent='✓ सम्यक्! सही उत्तर।';fb.className='fb ok';
+      if(!scored['m'+qi]){score++;scored['m'+qi]=1;updateBar();}
+    }else{
+      o.classList.add('wrong');
+      opts[correct].classList.add('correct');
+      fb.textContent='✗ नहीं — सही विकल्प हरे रंग में है।';fb.className='fb no';
+    }
+  }));
+});
+
+// Translation reveal
+document.querySelectorAll('.q[data-type="tr"]').forEach((q,qi)=>{
+  const btn=q.querySelector('.btn');
+  const model=q.querySelector('.model');
+  btn.addEventListener('click',()=>{
+    model.classList.add('show');
+    btn.textContent='✓ Model answer shown';
+    btn.disabled=true;btn.style.opacity=.6;
+    if(!scored['t'+qi]){score++;scored['t'+qi]=1;updateBar();}
+  });
+});
+// ---- Devanagari → Roman transliteration ----
+function devToRom(str) {
+  const C = {'क':'k','ख':'kh','ग':'g','घ':'gh','ङ':'ng','च':'ch','छ':'chh','ज':'j','झ':'jh','ञ':'n','ट':'t','ठ':'th','ड':'d','ढ':'dh','ण':'n','त':'t','थ':'th','द':'d','ध':'dh','न':'n','प':'p','फ':'ph','ब':'b','भ':'bh','म':'m','य':'y','र':'r','ल':'l','व':'v','श':'sh','ष':'sh','स':'s','ह':'h'};
+  const V = {'अ':'a','आ':'aa','इ':'i','ई':'ii','उ':'u','ऊ':'uu','ऋ':'ri','ए':'e','ऐ':'ai','ओ':'o','औ':'au'};
+  const M = {'ा':'aa','ि':'i','ी':'ii','ु':'u','ू':'uu','ृ':'ri','े':'e','ै':'ai','ो':'o','ौ':'au'};
+  const HALANT='्', ANU='ं', CHAND='ँ', VIS='ः';
+  const chars=[...str]; let out='';
+  for(let i=0;i<chars.length;i++){
+    const c=chars[i], nx=chars[i+1];
+    if(C[c]){ out+=C[c]; if(nx!==HALANT&&!M[nx])out+='a'; }
+    else if(V[c]) out+=V[c];
+    else if(M[c]) out+=M[c];
+    else if(c===HALANT||c==='।'||c==='॥'||c==='ऽ'||c==='़'){}
+    else if(c===ANU||c===CHAND) out+='n';
+    else if(c===VIS) out+='h';
+    else out+=c.toLowerCase();
+  }
+  return out;
+}
+
+// Normalise: collapse long vowels & spelling variants so "dhan" matches "dhana", "aajivika" matches "aajiivikaa"
+function norm(s){
+  return s.toLowerCase()
+    .replace(/aa/g,'a').replace(/ii/g,'i').replace(/uu/g,'u')
+    .replace(/ee/g,'i').replace(/oo/g,'u')
+    .replace(/ksh/g,'x').replace(/sh/g,'s').replace(/ph/g,'f')
+    .replace(/[^a-z0-9]/g,'');
+}
+
+// ---- Build search index ----
+const searchIndex = [];
+
+// Map section id → label
+const sectionLabel = {
+  'shab':'Shabdaarth','dhatu':'Dhatu','roop':'Shabdroop',
+  'prat':'Pratyay & Upsarg','samas':'Samas','anu':'Anuwad','plan':'Study Plan'
+};
+
+document.querySelectorAll('.panel:not(#srch)').forEach(panel=>{
+  const sec = panel.id;
+  const label = sectionLabel[sec]||sec;
+  panel.querySelectorAll('table tr').forEach(row=>{
+    const tds = row.querySelectorAll('td');
+    if(!tds.length) return; // skip header rows
+    const cells = [...tds].map(td=>td.innerText.trim());
+    const allText = cells.join(' ');
+    const roman = devToRom(allText);
+    searchIndex.push({sec, label, cells, raw:allText, roman});
+  });
+});
+
+// ---- Run search ----
+const inp = document.getElementById('searchInput');
+const box = document.getElementById('srchResults');
+
+function runSearch(q){
+  q = q.trim();
+  if(!q){box.innerHTML='<p class="sr-empty">Start typing to search across all sections ✨</p>';return;}
+  const nq = norm(q);
+  const hits = searchIndex.filter(item=>{
+    const normRom = norm(item.roman);
+    const normRaw = norm(item.raw);
+    return normRom.includes(nq) || normRaw.includes(nq);
+  });
+  if(!hits.length){
+    box.innerHTML=`<p class="sr-empty">No results for "<b>${q}</b>" — try a different spelling or check the English tab</p>`;
+    return;
+  }
+  let html=`<p class="sr-count">${hits.length} result${hits.length>1?'s':''} for "<b>${q}</b>"</p>`;
+  hits.forEach(h=>{
+    const c=h.cells;
+    // first cell often Sanskrit, second Hindi, third English, rest notes
+    const sans = c[0]||'';
+    const hi   = c[1]||'';
+    const en   = c[2]||'';
+    const note = c.slice(3).filter(Boolean).join(' · ');
+    html+=`<div class="sr-item">
+      <span class="sr-badge">${h.label}</span>
+      <div class="sr-main">
+        <span class="sr-sans">${sans}</span>
+        ${hi?`<span class="sr-hi">${hi}</span>`:''}
+        ${en?`<span class="sr-en">${en}</span>`:''}
+      </div>
+      ${note?`<div class="sr-note">${note}</div>`:''}
+    </div>`;
+  });
+  box.innerHTML=html;
+}
+
+inp.addEventListener('input', ()=>runSearch(inp.value));
+
+// Hint chips
+document.querySelectorAll('.hint-chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    inp.value = chip.dataset.q;
+    runSearch(inp.value);
+    inp.focus();
+  });
+});
+
+// Auto-focus search input when search tab is activated
+btns.forEach(b=>b.addEventListener('click',()=>{
+  if(b.dataset.tab==='srch') setTimeout(()=>inp.focus(),50);
+}));
+</script>
+</body>
+</html>
